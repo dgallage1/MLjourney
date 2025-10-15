@@ -151,7 +151,33 @@ House example: give size as an input goes into model f and outputs an estimated 
 
 **How to represent the function f?**
 
-f<sub>w,b</sub>(x) = w
+f<sub>w,b</sub>(x) = wx + b 
+f<sub>w,b</sub>(x) -> f(x)
+
+Linear regression with one variable (single feature x) -> Univariate linear regression
+**f(x) = wx + b**
+
+## Notation
+Here is a summary of some of the notation you will encounter.  
+
+| General <img width=70/> <br /> Notation <img width=70/> | Description <img width=350/> | Python (if applicable) |
+|:--------------------------|:------------------------------------------------------------|:------------------------|
+| $a$ | Scalar, non-bold |  |
+| $\mathbf{a}$ | Vector, bold |  |
+| **Regression** |  |  |
+| $\mathbf{x}$ | Training example feature values (in this lab – Size (1000 sqft)) | `x_train` |
+| $\mathbf{y}$ | Training example targets (in this lab – Price (1000s of dollars)) | `y_train` |
+| $(x_i, y_i)$ | $i$-th training example | `x_i`, `y_i` |
+| $m$ | Number of training examples | `m` |
+| $w$ | Parameter: weight | `w` |
+| $b$ | Parameter: bias | `b` |
+| $f_{w,b}(x_i)$ | Model output at $x_i$ parameterized by $w,b$: $f_{w,b}(x_i) = wx_i + b$ | `f_wb` |
+
+
+
+
+
+
 
 
 
