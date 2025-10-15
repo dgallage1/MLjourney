@@ -30,3 +30,5 @@ def predict_cost(new_size, w, b):
 # Predicting costs for new house sizes
 predict_cost(1500, w, b)
 predict_cost(2500, w, b)
+predict_cost(3000, w, b)
+

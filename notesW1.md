@@ -174,7 +174,9 @@ Here is a summary of some of the notation you will encounter.
 | $f_{w,b}(x_i)$ | Model output at $x_i$ parameterized by $w,b$: $f_{w,b}(x_i) = wx_i + b$ | `f_wb` |
 
 
-
+Common tools 
+- NumPy, a popular library for scientific computing
+- Matplotlib, a popular library for plotting data
 
 
 
