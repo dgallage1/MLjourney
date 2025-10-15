@@ -106,7 +106,7 @@ Used to code up and experiment to try things out.
 - press d twice fast to delete a code block
 - pretty easy to work around 
 
-## Linear regression model 
+## Linear regression model 1
 
 **Example question**  - linear Regression : Housing price prediction 
 I want to predict housing prices based on the size of the house in feet 
@@ -130,9 +130,15 @@ output variable -> **target variable** -> y
 (x^(i), y^(i)) -> ith training example -> NOT sqaured number
 eg x^1, y^1 -> (2104,400)
 
-### Linear regression model 2
+## Linear regression model 2
 
+training set with features and targets -> supervised learning algorithm -> produces function **f**, takes in input x that goes into f - model, and output y-hat which is the prediction for y (esmtimated y) where y is the target. 
 
+House example: give size as an input goes into model f and outputs an estimated price
+
+**How to represent the function f?**
+
+f<sub>w,b</sub>(x) = w
 
 
 
