@@ -127,7 +127,7 @@ output variable -> **target variable** -> y
 **m** -> total number of training samples 
 (x,y) -> single training example 
 
-(x<sup>(i)</sup>, y<sup>(i)</sup>) -> i<sup>(th) training example -> NOT sqaured number
+(x<sup>(i)</sup>, y<sup>(i)</sup>) -> i<sup>(th)/sup> training example -> NOT sqaured number
 eg x<sup>(1), y<sup>(1) -> (2104,400)
 
 ## Linear regression model 2
@@ -139,6 +139,8 @@ House example: give size as an input goes into model f and outputs an estimated 
 **How to represent the function f?**
 
 f<sub>w,b</sub>(x) = w
+
+
 
 
 
