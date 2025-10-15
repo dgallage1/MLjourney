@@ -178,32 +178,27 @@ Common tools
 - NumPy, a popular library for scientific computing
 - Matplotlib, a popular library for plotting data
 
-### Understanding `shape`, `shape[0]`, and `shape[1]`
+### Understanding `x_train.shape[1]` in a Machine Learning Context
 
 ```python
 import numpy as np
 
-# Example: 2D array (like a table)
-b = np.array([
-    [1, 2, 3],
-    [4, 5, 6]
-])
-
-print(b.shape)      # (2, 3)
-print(b.shape[0])   # 2
-print(b.shape[1])   # 3
-
-| Code         | Output   | Meaning                                      |
-| ------------ | -------- | -------------------------------------------- |
-| `b.shape`    | `(2, 3)` | Shape tuple → 2 rows × 3 columns             |
-| `b.shape[0]` | `2`      | Number of **rows** (examples / data points)  |
-| `b.shape[1]` | `3`      | Number of **columns** (features per example) |
+# 1D array example (only one dimension)
+x_train = np.array([1.0, 2.0])
+print(x_train.shape)      # (2,)
+# This has only one dimension → 2 elements total
+# There is no second dimension, so the next line will raise an error:
+# print(x_train.shape[1])  ❌ IndexError: tuple index out of range
+```
 
 Explanation:
 
-- b.shape gives a tuple describing the array’s structure.
-- b.shape[0] gives how many examples (rows) there are.
-- b.shape[1] gives how many features (columns) each example has.
+For a 1D array like x_train = [1.0, 2.0], x_train.shape returns (2,), meaning one dimension with two values.
+
+Since the tuple (2,) has only one element, trying to access x_train.shape[1] fails because there is no second dimension. x_train[0] = 2, 1d with 2 elements 
+
+NumPy doesn’t treat this as a table — just a single list of data points.
+
 
 
 
