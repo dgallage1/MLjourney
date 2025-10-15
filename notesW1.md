@@ -178,7 +178,32 @@ Common tools
 - NumPy, a popular library for scientific computing
 - Matplotlib, a popular library for plotting data
 
+### Understanding `shape`, `shape[0]`, and `shape[1]`
 
+```python
+import numpy as np
+
+# Example: 2D array (like a table)
+b = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print(b.shape)      # (2, 3)
+print(b.shape[0])   # 2
+print(b.shape[1])   # 3
+
+| Code         | Output   | Meaning                                      |
+| ------------ | -------- | -------------------------------------------- |
+| `b.shape`    | `(2, 3)` | Shape tuple → 2 rows × 3 columns             |
+| `b.shape[0]` | `2`      | Number of **rows** (examples / data points)  |
+| `b.shape[1]` | `3`      | Number of **columns** (features per example) |
+
+Explanation:
+
+- b.shape gives a tuple describing the array’s structure.
+- b.shape[0] gives how many examples (rows) there are.
+- b.shape[1] gives how many features (columns) each example has.
 
 
 
