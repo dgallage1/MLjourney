@@ -127,8 +127,8 @@ output variable -> **target variable** -> y
 **m** -> total number of training samples 
 (x,y) -> single training example 
 
-(x^(i), y^(i)) -> ith training example -> NOT sqaured number
-eg x^1, y^1 -> (2104,400)
+(x<sup>(i)</sup>, y<sup>(i)</sup>) -> i<sup>(th) training example -> NOT sqaured number
+eg x<sup>(1), y<sup>(1) -> (2104,400)
 
 ## Linear regression model 2
 
