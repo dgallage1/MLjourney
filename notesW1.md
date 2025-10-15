@@ -127,8 +127,21 @@ output variable -> **target variable** -> y
 **m** -> total number of training samples 
 (x,y) -> single training example 
 
-(x<sup>(i)</sup>, y<sup>(i)</sup>) -> i<sup>(th)/sup> training example -> NOT sqaured number
-eg x<sup>(1), y<sup>(1) -> (2104,400)
+## Training Example Notation
+
+Each training example is represented as a pair:
+
+(x<sub>i</sub>, y<sub>i</sub>)
+
+For example, the first training example is:
+
+(x<sub>1</sub>, y<sub>1</sub>) = (2104, 400)
+
+Here:
+- **x<sub>i</sub>** represents the input features (e.g., house size in square feet)
+- **y<sub>i</sub>** represents the corresponding output value (e.g., house price in $1000s)
+- **i** is the index of the training example (1 ≤ i ≤ m)
+
 
 ## Linear regression model 2
 
