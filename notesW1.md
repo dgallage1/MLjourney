@@ -341,4 +341,83 @@ assingment code
 - alpha is the learning rate : controls how big of a step you take down the hill, if alpha is too large you are trying to take huge steps down the hill.
 - derivative team of the cost function J
 
+### Gradient Descent Formula for Bias
+
+
+The update rule for the bias term is:
+
+$$
+b = b - \alpha \frac{\partial}{\partial b} J(w, b)
+$$
+
+**Where:**
+- `b` → bias parameter  
+- `α` → learning rate  
+- `∂/∂b J(w, b)` → derivative (gradient) of the cost function with respect to `b`
+
+- Two parameters w and b need to be updated simultaneously. 
+
+**example question** Correct : Simultaneous update
+
+$$
+tempw = w - \alpha \frac{\partial}{\partial w} J(w, b)
+$$
+
+$$
+tempb = b - \alpha \frac{\partial}{\partial b} J(w, b)
+$$
+
+where:
+- `w` = weight parameter  
+- `b` = bias parameter  
+- `alpha` = learning rate  
+- `∂J(w, b)/∂w` = partial derivative of the cost function with respect to `w`  
+- `∂J(w, b)/∂b` = partial derivative of the cost function with respect to `b`
+
+w = tempw 
+b = tempb
+
+- make sure to update both at the same time not one after the other
+- repeat until convergence
+
+### gradient descent intuition J(w) visualised
+
+- take a point w on the curve and draw a tangent line to the curve on that point
+- eg: 2/1 -> gradient, line go up to the right - slope is a positive and the derivative part of that formulae is greater than zero 
+- w = w - alpha * (postive number) 
+- learning rate is always positive
+- w minus a positive number new value willl mean that w will be assigned a smaller value and moves to the left 
+
+- if it is a negative slope
+- w = w - alpha*(negative number)
+- w = w--above -> w will be assigned a higher number so will move to the right to get closer to the minimum 
+
+### Learning rate
+
+If alpha is too small - eg: 0.000001 then you only take really small steps the learning rate is so small and the outcome of the process is you do reduce the cost J but the process is very small. Gradient descent is too slow.
+
+If alpha is too large  - but its already pretty close to the minimum already, it increases and the step might go way higher than the minimum and keep overshooting. Gradient descent may overshoot and never reach minimum, it may fail to converge and my even diverge. 
+
+**example question** : if w is already at the local minimum. So the derivative term is equal to zero so w is updated to w - alpha * 0 which is just w = w. It won't change the parameters as it will keep it at local minimum 
+
+- can reach local minimum with fixed learning rate alpha 
+- large to not as alrge to smaller and automatically take smaller and smaller steps, aproaching a local minimum the update steps become smaller, can reach minimum without decreasing learning rate. 
+
+### Gradient descent for linear regression 
+
+### Derivative of Cost Function with respect to \( w \)
+
+$$
+\frac{\partial J(w,b)}{\partial w} = \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right) x^{(i)}
+$$
+
+### Derivative of Cost Function with respect to \( b \)
+
+$$
+\frac{\partial J(w,b)}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} \left( f_{w,b}(x^{(i)}) - y^{(i)} \right)
+$$
+
+
+
+
 
