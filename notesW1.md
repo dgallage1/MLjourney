@@ -197,13 +197,148 @@ For a 1D array like x_train = [1.0, 2.0], x_train.shape returns (2,), meaning on
 
 Since the tuple (2,) has only one element, trying to access x_train.shape[1] fails because there is no second dimension. x_train[0] = 2, 1d with 2 elements 
 
-NumPy doesn’t treat this as a table — just a single list of data points.
+NumPy doesn’t treat this as a table, just a single list of data points.
 
 
+### Cost Function 
+
+For the model : f<sub>w,b</sub>(x) = wx + b 
+w, b are the parameters of the model - variables that we can change or adjust to improve the model 
+They can also be known as coeffcients or weights 
+
+**How to find values for w and b?** so that y hat i is close to y i for all values 
+
+### Cost function : squared error cost function
+
+$$
+J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (\hat{y}^{(i)} - y^{(i)})^2
+$$
+
+- takes prediction y hat and predicts it to the target y -> **error** (how far off prediction from the target)
+- then do the square of the error
+-  compute different training examples for i
+- sum of the sqaured errors from i =1 to however many training examples we have (m) 
+- m is the number of training examples, if more examples m is larger, cost function will be summing over several more examples.
+- so divide it to get the average sqaured error by dividing by m, for ML divide by 2 to make later calculations look neater 
+- Capital J(w,b) -> the cost function output
+
+$$
+J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \\[6pt]
+\begin{aligned}
+f_{w,b}(x^{(i)}) &= w x^{(i)} + b : \text{ predicted value (hypothesis)} \\
+y^{(i)} &= \text{ true target value} \\
+m &= \text{ number of training examples}
+\end{aligned}
+$$
+
+#### Goal
+Find \( w \) and \( b \) that minimize the cost function:
+
+$$
+\min_{w,\,b} J(w, b)
+$$
+**Example simplified:**
+
+$$
+f_{w}(x) = w x
+$$
+
+- there is no y intercept 
+- cost function below is simplified to this 
+
+$$
+J(w) = \frac{1}{2m} \sum_{i=1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2
+$$
+
+$$
+\min_{w} J(w)
+$$
 
 
+for this, when w is fixed (always constant value) then fw is only a function on input x. 
+$$
+f_{w}(x) = w x
+$$
+
+### Cost Function Example (No Intercept)
+
+Given data points:  
+\[
+(1,1),\ (2,2),\ (3,3)
+\]
+
+Model:  
+\[
+f_w(x) = w x
+\]
+
+Cost function:  
+$$
+J(w) = \frac{1}{2m} \sum_{i=1}^{m} (f_w(x^{(i)}) - y^{(i)})^2
+$$
+Substitute \( f_w(x^{(i)}) = w x^{(i)} \) and \( m = 3 \):  
+$$
+J(w) = \frac{1}{6}\left[(w(1)-1)^2 + (w(2)-2)^2 + (w(3)-3)^2\right]
+$$
 
 
+### When \( w = 1 \)
 
+$$
+J(1) = \frac{1}{6}\left[(1(1)-1)^2 + (1(2)-2)^2 + (1(3)-3)^2\right]
+$$
+
+$$
+J(1) = \frac{1}{6}\left[(1-1)^2 + (2-2)^2 + (3-3)^2\right]
+$$
+
+$$
+J(1) = \frac{1}{6}[0 + 0 + 0] = 0
+$$
+
+
+**Result:**  
+When \( w = 1 \), every term in the brackets equals zero because the line \( y = x \) passes exactly through all data points.  
+Therefore, the cost function is:
+
+$$
+\boxed{J(1) = 0}
+$$
+
+For different values of w corresponds to a different straight line fit f(x), you can trace out what the cost function J(w) looks like and from our example we can see that when w = 1 that is the minimum point in the curved line. 
+
+**how to choose vlaue of w** - to minimise J to be as small as possible, minimises sqaured errors as much as possible -> minimise the cost 
+
+### visualising the cost function 
+
+3d can be used with contours to show 2d models
+
+### Gradient Descent 
+
+Have cost function J(w,b) -> we want to minimise this for linear regression but can use gradient descent for anything. Work with cost function that works with more than two parameters. 
+
+Outline 
+- start setting w and b to zero (common)
+- Keep changing w and b to reduce J(w,b)
+- Until we settle at or near a minimum 
+- for some functions of J there may have more than one minimum 
+
+linear regression owuld always be a bow shaped or hammock shaped visual, also the example is not sqaured error cost. Think of it like a golf course, high points are mountains, low points are valleys. Goal is to start at the top and get to bottom as most efficiently as possible. Look around 360 and go downhill as quikc as possible to a valley, look for the steepest descent with a little step. Then again after moving a step do another 360 degree to see which way would get the steepest and you get a new path. Keep doing steps till your at the bottom of the valley. We just went through multiple steps of gradient descent. Now try again use a different starting point a couple steps to the right of the original, repeat gradient descent process and you end up in another valley different to the first time - you get to another local minimum. 
+
+### Implementing gradient descent algorithm
+
+### Gradient Descent Formula
+
+The general update rule for gradient descent is:
+
+$$
+w = w - \alpha \frac{\partial}{\partial w} J(w, b)
+$$
+
+assingment code
+- equal sign is the assignment operator
+- a = c -> take value c and store in computers variable a 
+- alpha is the learning rate : controls how big of a step you take down the hill, if alpha is too large you are trying to take huge steps down the hill.
+- derivative team of the cost function J
 
 
